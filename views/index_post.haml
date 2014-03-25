@@ -1,0 +1,8 @@
+%form{:method=>'POST',:action=>"/"}
+  %input{:type=>"text",:name=>"sentence"}
+  %input{:type => 'submit', :value => '解析'}
+%table
+  - @nodes.mincost_path[1..-2].each do |node|
+    %tr
+      %td #{node.word.left.text.split(',')[0]}
+      %td #{node.word.surface}
